@@ -9,19 +9,19 @@
 & & players^T \times playerList \\
 & \text{subject to} & & \sum_{i=2}^n players^T \times playerList\leq budget \\
 & & &  \sum_{i=2}^{n} players_i \leq rosterSize\\
-& & &  pg_i + sg_i + sf_i + pf_i + c_i + g_i + f_i + util_i = 0\\
+& & &  pg_i + sg_i + sf_i + pf_i + c_i + g_i + f_i + util_i = 0 & \forall i = 2,\dots, n\\
 & & &  \sum_{i=2}^{n} pg_i \leq 1 &  \sum_{i=2}^{n} sg_i \leq 1\\
 & & &  \sum_{i=2}^{n} sf_i \leq 1 &  \sum_{i=2}^{n} pf_i \leq 1\\
 & & &  \sum_{i=2}^{n} c_i \leq 1  &  \sum_{i=2}^{n} g_i \leq 1\\
 & & &  \sum_{i=2}^{n} f_i \leq 1  &  \sum_{i=2}^{n} util_i \leq 1\\
-& & &  pg_i \leq eligiblePG_i & sg_i \leq eligibleSG_i \\
-& & &  sf_i \leq eligibleSF_i & pf_i \leq eligiblePF_i \\
-& & &  c_i \leq eligibleC_i & g_i \leq eligibleG_i \\
-& & &  f_i \leq eligibleF_i & util_i \leq eligibleUTIL_i \\
-& & &  players_i \in \{0, 1\} & pg_i \in \{0, 1\} \\
-& & &  sg_i \in \{0, 1\} & sf_i \in \{0, 1\} \\
-& & &  pf_i \in \{0, 1\} & c_i \in \{0, 1\} \\
-& & &  g_i \in \{0, 1\} & f_i \in \{0, 1\} \\
+& & &  pg_i \leq eligiblePG_i & sg_i \leq eligibleSG_i & & \forall i = 2,\dots, n \\
+& & &  sf_i \leq eligibleSF_i & pf_i \leq eligiblePF_i & & \forall i = 2,\dots, n \\
+& & &  c_i \leq eligibleC_i & g_i \leq eligibleG_i & & \forall i = 2,\dots, n \\
+& & &  f_i \leq eligibleF_i & util_i \leq eligibleUTIL_i & & \forall i = 2,\dots, n \\
+& & &  players_i \in \{0, 1\} & pg_i \in \{0, 1\} & & \forall i = 2,\dots, n  \\
+& & &  sg_i \in \{0, 1\} & sf_i \in \{0, 1\} & & \forall i = 2,\dots, n  \\
+& & &  pf_i \in \{0, 1\} & c_i \in \{0, 1\} & & \forall i = 2,\dots, n  \\
+& & &  g_i \in \{0, 1\} & f_i \in \{0, 1\} & & \forall i = 2,\dots, n  \\
 & & &  util_i \in \{0, 1\} & \forall i = 2,\dots, n \\
 \end{aligned}
 \end{equation}
